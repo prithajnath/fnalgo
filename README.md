@@ -8,7 +8,7 @@ Run the `add_solution` script. Paste the problem URL when prompted and then ente
 ```
 $ ./add_solution
 Enter problem URL: https://leetcode.com/problems/longest-substring-without-repeating-characters/
-What language are you adding your solution in? (Type the extension: py, ex, rb, go etc): py
+What language are you adding your solution in? (For ex: Python, Ruby, Golang etc): py
 What's your GitHub username: prithajnath
 ```
 You should then be able to add your solution to the newly created file
