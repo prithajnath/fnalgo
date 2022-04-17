@@ -13,7 +13,7 @@ def bfs(s):
     seen = set()
     q = deque()
     q.append(s)
-    node_lookup = {s.val: Node(s.val, [])}
+    node_lookup = {s.val: Node(s.val, set())}
     while q:
         current_node = q.popleft()
         new_current_node = node_lookup[current_node.val]
@@ -21,7 +21,7 @@ def bfs(s):
         seen.add(current_node)
         for neighbor in current_node.neighbors:
             if neighbor.val not in node_lookup:
-                new_current_neighbor_node = Node(neighbor.val, [])
+                new_current_neighbor_node = Node(neighbor.val, set())
                 node_lookup[neighbor.val] = new_current_neighbor_node
                 print(
                     f"Initializing new node for {new_current_neighbor_node.val} as a new neighbor node"
@@ -32,7 +32,7 @@ def bfs(s):
             if new_current_neighbor_node in new_current_node.neighbors:
                 continue
 
-            new_current_node.neighbors.append(new_current_neighbor_node)
+            new_current_node.neighbors.add(new_current_neighbor_node)
 
             if neighbor in seen:
                 continue
